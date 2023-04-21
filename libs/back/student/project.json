@@ -1,0 +1,16 @@
+{
+  "name": "back-student",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/back/student/src",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/back/student/**/*.ts"]
+      }
+    }
+  },
+  "tags": ["scope:api", "type:lib"]
+}

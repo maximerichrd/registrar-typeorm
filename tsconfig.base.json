@@ -16,10 +16,12 @@
     "baseUrl": ".",
     "paths": {
       "@demo/back/auth": ["libs/back/auth/index.ts"],
+      "@demo/back/offered-class": ["libs/back/offered-class/index.ts"],
       "@demo/back/shared/data-testdb": [
         "libs/back/shared/data-testdb/index.ts"
       ],
       "@demo/back/shared/utils": ["libs/back/shared/utils/index.ts"],
+      "@demo/back/student": ["libs/back/student/index.ts"],
       "@demo/front/design/ui-design": ["libs/front/design/ui-design/index.ts"],
       "@demo/front/design/ui-design/src/index.css": [
         "libs/front/design/ui-design/src/index.css"

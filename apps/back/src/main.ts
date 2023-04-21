@@ -1,4 +1,4 @@
-import { Logger } from '@nestjs/common';
+import { Logger, ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 
 import helmet from 'helmet';
@@ -13,17 +13,17 @@ async function bootstrap() {
     logger: new WinstonLogger(),
   });
 
-  app.use(helmet());
-
-  setupSwagger(app);
-
   const configService = app.get(ConfigurationService);
   const port = configService.get<number>('PORT');
 
-  //TODO: you should add manually other frontend domains
-  app.enableCors({ origin: configService.get<string>('FRONTEND_URL') });
-  await app.listen(port);
+  app
+    .use(helmet())
+    .useGlobalPipes(new ValidationPipe())
+    .enableCors({ origin: configService.get<string>('FRONTEND_URL') });
 
+
+  setupSwagger(app);
+  await app.listen(port);
   Logger.log(`🚀 Application is running on: http://localhost:${port}`);
   Logger.log(`Environment: ${process.env['NODE_ENV']}`);
 }

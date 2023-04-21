@@ -1,0 +1,16 @@
+{
+  "name": "back-offered-class",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/back/offered-class/src",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/back/offered-class/**/*.ts"]
+      }
+    }
+  },
+  "tags": ["scope:api", "type:lib"]
+}
