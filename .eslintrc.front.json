@@ -1,0 +1,77 @@
+{
+  "extends": [
+    "plugin:@nrwl/nx/react-typescript",
+    "next",
+    "next/core-web-vitals",
+    ".eslintrc.json"
+  ],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {
+        "react-hooks/exhaustive-deps": "error"
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "paths": [
+              {
+                "name": "next",
+                "importNames": [
+                  "GetStaticPaths",
+                  "GetStaticPathsContext",
+                  "GetStaticProps",
+                  "GetStaticPropsContext",
+                  "GetServerSideProps",
+                  "GetServerSidePropsContext"
+                ],
+                "message": "Use `libs/<appName>/shared/next` instead."
+              },
+              {
+                "name": "next/dist/client/router",
+                "message": "Use `next/router` instead."
+              },
+              {
+                "name": "next-i18next",
+                "importNames": ["useTranslation", "appWithTranslation"],
+                "message": "Use `libs/<appName>/shared/i18n/*`"
+              },
+              {
+                "name": "next-i18next/serverSideTranslations",
+                "importNames": ["serverSideTranslations"],
+                "message": "Use `libs/<appName>/shared/i18n/serverSideTranslations`"
+              },
+              {
+                "name": "ky",
+                "importNames": ["default"],
+                "message": "Use `ky-universal` (supports node and browser)"
+              },
+              {
+                "name": "swr",
+                "importNames": ["default"],
+                "message": "Use `libs/<appName>/shared/http` for better typings."
+              },
+              {
+                "name": "swr/infinite",
+                "importNames": ["default"],
+                "message": "Use `libs/<appName>/shared/http` for better typings."
+              }
+            ],
+            "patterns": ["next/dist/*"]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "rules": {}
+    }
+  ],
+  "rules": {
+    "@next/next/no-html-link-for-pages": "off"
+  }
+}

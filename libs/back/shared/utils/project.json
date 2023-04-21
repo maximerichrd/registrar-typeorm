@@ -1,0 +1,16 @@
+{
+  "name": "back-utils",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/back/shared/utils/src",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/back/shared/utils/**/*.ts"]
+      }
+    }
+  },
+  "tags": ["scope:api", "type:lib", "scope:shared"]
+}

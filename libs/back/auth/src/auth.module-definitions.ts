@@ -1,0 +1,6 @@
+import { ConfigurableModuleBuilder } from '@nestjs/common';
+
+import type { AuthModuleOptions } from './interfaces/auth-module-options.interface';
+
+export const { ConfigurableModuleClass, MODULE_OPTIONS_TOKEN } =
+  new ConfigurableModuleBuilder<AuthModuleOptions>().build();

@@ -1,0 +1,51 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2020",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@demo/back/auth": ["libs/back/auth/index.ts"],
+      "@demo/back/shared/utils": ["libs/back/shared/utils/index.ts"],
+      "@demo/front/design/ui-design": ["libs/front/design/ui-design/index.ts"],
+      "@demo/front/design/ui-design/src/index.css": [
+        "libs/front/design/ui-design/src/index.css"
+      ],
+      "@demo/front/domains/login": ["libs/front/domains/login/index.ts"],
+      "@demo/front/shared/http": ["libs/front/shared/http/index.ts"],
+      "@demo/front/shared/i18n/*": ["libs/front/shared/i18n/*"],
+      "@demo/front/shared/next": ["libs/front/shared/next/index.ts"],
+      "@demo/front/shared/types/*": ["libs/front/shared/types/*"]
+    },
+    "strict": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "exactOptionalPropertyTypes": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "allowJs": false,
+    "noEmit": true,
+    "isolatedModules": true,
+    "incremental": true
+  },
+  "exclude": ["node_modules", "tmp"]
+}

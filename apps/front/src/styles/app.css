@@ -1,0 +1,9 @@
+@import '@demo/front/design/ui-design/src/index.css';
+/*
+  Don't forget to import your libraries styles, for example:
+  @import 'dist/libraries/ui-front/index.css';
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

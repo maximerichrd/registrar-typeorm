@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "preserve",
+    "esModuleInterop": true,
+    "incremental": true,
+    "allowJs": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "target": "es2020"
+  },
+  "include": [
+    "next-env.d.ts",
+    "src",
+    "next.config.js",
+    "../../libs/front/shared/types/**/*.ts",
+    "../../libs/shared/types/**/*.ts"
+  ],
+  "exclude": [".next", "public", "node_modules"]
+}

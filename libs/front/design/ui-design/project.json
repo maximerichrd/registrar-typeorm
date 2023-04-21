@@ -1,0 +1,56 @@
+{
+  "name": "ui-design",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/front/design/ui-design/src",
+  "tags": ["scope:front", "type:lib", "type:ui"],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/rollup:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/front/design/ui-design",
+        "tsConfig": "libs/front/design/ui-design/tsconfig.lib.json",
+        "project": "libs/front/design/ui-design/package.json",
+        "entryFile": "libs/front/design/ui-design/index.ts",
+        "external": ["react/jsx-runtime"],
+        "compiler": "swc",
+        "rollupConfig": "@fabernovel/pes-nx-plugin-next/plugins/bundle-rollup"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/front/design/ui-design/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "storybook": {
+      "executor": "@nrwl/storybook:storybook",
+      "options": {
+        "port": 4400,
+        "configDir": "libs/front/design/ui-design/.storybook",
+        "uiFramework": "@storybook/react"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@nrwl/storybook:build",
+      "outputs": ["{options.outputDir}"],
+      "options": {
+        "outputDir": "dist/storybook/ui-design",
+        "configDir": "libs/front/design/ui-design/.storybook",
+        "uiFramework": "@storybook/react"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "front-i18n",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/front/shared/i18n/src",
+  "tags": ["scope:front", "scope:shared", "type:lib"],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/front/shared/i18n/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  }
+}

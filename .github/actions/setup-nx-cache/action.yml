@@ -1,0 +1,12 @@
+name: setup nx cache
+runs:
+  using: 'composite'
+  steps:
+    - name: Cache Nx
+      uses: actions/cache@v3
+      with:
+        path: node_modules/.cache/nx
+        key: cache-nx-${{ hashFiles('pnpm-lock.yaml') }}-${{ matrix.target }}-${{ matrix.jobIndex }}-${{ github.sha }}
+        restore-keys: |
+          cache-nx-${{ hashFiles('pnpm-lock.yaml') }}-${{ matrix.target }}-${{ matrix.jobIndex }}-
+          cache-nx-${{ hashFiles('pnpm-lock.yaml') }}-

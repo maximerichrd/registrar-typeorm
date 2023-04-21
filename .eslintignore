@@ -1,0 +1,11 @@
+webpack*.config.js
+.eslintrc.cjs
+.caches/
+.vscode/
+.yarn/
+.next/
+build/
+coverage/
+node_modules/
+storybook-static/
+jest.config.ts

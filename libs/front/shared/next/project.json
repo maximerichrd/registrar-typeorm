@@ -1,0 +1,16 @@
+{
+  "name": "front-next",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/front/shared/next/src",
+  "tags": ["scope:front", "scope:shared", "type:lib"],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/front/shared/next/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  }
+}

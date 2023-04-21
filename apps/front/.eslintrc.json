@@ -1,0 +1,31 @@
+{
+  "extends": ["../../.eslintrc.front.json"],
+  "ignorePatterns": ["!**/*", ".next/**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "parserOptions": {
+        "project": ["apps/front/tsconfig(.*)?.json"]
+      },
+      "rules": {
+        "@next/next/no-html-link-for-pages": ["error", "apps/front/src/pages"]
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {}
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "rules": {}
+    }
+  ],
+  "env": {
+    "jest": true
+  },
+  "settings": {
+    "next": {
+      "rootDir": "./src"
+    }
+  }
+}

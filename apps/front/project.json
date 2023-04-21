@@ -1,0 +1,53 @@
+{
+  "name": "front",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/front",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@fabernovel/pes-nx-plugin-next:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "root": "apps/front",
+        "outputPath": "dist/apps/front"
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      },
+      "defaultConfiguration": "development"
+    },
+    "serve": {
+      "executor": "@fabernovel/pes-nx-plugin-next:server",
+      "options": {
+        "buildTarget": "front:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "front:build:development",
+          "dev": true,
+          "port": 3000
+        },
+        "production": {
+          "buildTarget": "front:build:production",
+          "dev": false
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "export": {
+      "executor": "@fabernovel/pes-nx-plugin-next:export",
+      "options": {
+        "buildTarget": "front:build:production"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/front/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  },
+  "tags": ["scope:front", "type:app"]
+}

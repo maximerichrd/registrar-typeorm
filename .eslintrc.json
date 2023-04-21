@@ -1,0 +1,132 @@
+{
+  "root": true,
+  "ignorePatterns": ["**/*"],
+  "reportUnusedDisableDirectives": true,
+  "plugins": ["@nrwl/nx"],
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "warnOnUnsupportedTypescriptVersion": true,
+    "sourceType": "module"
+  },
+  "overrides": [
+    {
+      "files": ["*.js", "*.jsx"],
+      "extends": ["plugin:@nrwl/nx/javascript"],
+      "rules": {}
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@nrwl/nx/typescript"],
+      "rules": {
+        "no-console": "warn",
+        "no-nested-ternary": "error",
+        "curly": "error",
+        "object-shorthand": ["error", "consistent-as-needed"],
+        "@typescript-eslint/no-unnecessary-boolean-literal-compare": "error",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/require-array-sort-compare": "error",
+        "@typescript-eslint/array-type": [
+          "warn",
+          {
+            "default": "array-simple"
+          }
+        ],
+        "@typescript-eslint/restrict-plus-operands": [
+          "error",
+          { "checkCompoundAssignments": true, "allowAny": false }
+        ],
+        "@typescript-eslint/no-confusing-void-expression": [
+          "error",
+          { "ignoreVoidOperator": true }
+        ],
+        "@typescript-eslint/non-nullable-type-assertion-style": "error",
+        "@typescript-eslint/prefer-includes": "error",
+        "@typescript-eslint/prefer-reduce-type-parameter": "error",
+        "@typescript-eslint/prefer-string-starts-ends-with": "error",
+        "@typescript-eslint/promise-function-async": [
+          "error",
+          {
+            "allowedPromiseNames": ["Thenable"],
+            "checkArrowFunctions": true,
+            "checkFunctionDeclarations": true,
+            "checkFunctionExpressions": true,
+            "checkMethodDeclarations": true
+          }
+        ],
+        "@typescript-eslint/no-non-null-assertion": "error",
+        "@typescript-eslint/ban-ts-comment": [
+          "error",
+          {
+            "ts-expect-error": "allow-with-description",
+            "ts-ignore": "allow-with-description",
+            "ts-nocheck": true,
+            "ts-check": false,
+            "minimumDescriptionLength": 3
+          }
+        ],
+        "no-useless-constructor": "warn",
+        "no-use-before-define": [
+          "error",
+          {
+            "functions": false,
+            "classes": true,
+            "variables": false
+          }
+        ],
+        "@typescript-eslint/consistent-type-assertions": [
+          "error",
+          { "assertionStyle": "as", "objectLiteralTypeAssertions": "never" }
+        ],
+        "@typescript-eslint/consistent-type-imports": [
+          "error",
+          { "prefer": "type-imports", "disallowTypeAnnotations": true }
+        ],
+        "@typescript-eslint/no-confusing-non-null-assertion": "error",
+        "@typescript-eslint/no-non-null-asserted-nullish-coalescing": "error",
+        "@typescript-eslint/no-require-imports": "error",
+        "@typescript-eslint/prefer-optional-chain": "error",
+        "no-array-constructor": "error",
+        "no-throw-literal": "error",
+        "@nrwl/nx/enforce-module-boundaries": [
+          "error",
+          {
+            "enforceBuildableLibDependency": true,
+            "banTransitiveDependencies": true,
+            "checkNestedExternalImports": true,
+            "allowCircularSelfDependency": false,
+            "allow": [],
+            "depConstraints": [
+              {
+                "sourceTag": "scope:shared",
+                "onlyDependOnLibsWithTags": ["scope:shared"]
+              },
+              {
+                "sourceTag": "type:app",
+                "onlyDependOnLibsWithTags": ["type:lib"],
+                "notDependOnLibsWithTags": ["type:app"]
+              },
+              {
+                "sourceTag": "scope:domain",
+                "notDependOnLibsWithTags": ["scope:domain"]
+              },
+              {
+                "sourceTag": "scope:api",
+                "onlyDependOnLibsWithTags": ["scope:shared", "scope:api"],
+                "bannedExternalImports": ["react*", "next*"]
+              },
+              {
+                "sourceTag": "scope:front",
+                "onlyDependOnLibsWithTags": ["scope:shared", "scope:front"],
+                "bannedExternalImports": ["@nestjs*"]
+              },
+              {
+                "sourceTag": "type:ui",
+                "onlyDependOnLibsWithTags": ["type:ui"]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

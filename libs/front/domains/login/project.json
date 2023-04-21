@@ -1,0 +1,16 @@
+{
+  "name": "front-login",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/front/domains/login/src",
+  "tags": ["scope:front", "scope:domain", "type:lib"],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/front/domains/login/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  }
+}
