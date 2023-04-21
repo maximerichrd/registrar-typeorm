@@ -1,18 +1,18 @@
-import { Entity, Column, ManyToMany, PrimaryColumn } from "typeorm"
-import { StudentEntity } from "./student.entity"
+import { Entity, Column, ManyToMany, PrimaryColumn } from 'typeorm';
+
+import type { StudentEntity } from './student.entity';
 
 @Entity()
 export class OfferedClassEntity {
   @PrimaryColumn()
-  code!: number
+  code!: number;
 
   @Column()
-  name!: string
+  name!: string;
 
-  @Column("int")
-  hours!: number
+  @Column('int')
+  hours!: number;
 
-  @ManyToMany(() => StudentEntity, (student) => student.classes)
-  students!: StudentEntity[]
+  @ManyToMany('StudentEntity', 'classes')
+  students!: StudentEntity[];
 }
-
