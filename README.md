@@ -6,11 +6,8 @@ following this great [lightning on PES](https://www.notion.so/fabernovel/PES-813
 
 Take it as a dev project to experiment with [TypeORM](https://typeorm.io) and [NestJS](https://docs.nestjs.com).
 
-<picture>
-  <source media="(prefers-color-scheme: light)" srcset="https://github.com/faberNovel/fabernovel-pes/tree/main/documentation/images/PES_logo_lightMode.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/faberNovel/fabernovel-pes/tree/main/documentation/images/PES_logo_darkMode.svg">
-  <img alt="PES Logo" src="https://github.com/faberNovel/fabernovel-pes/tree/main/documentation/images/PES_logo_lightMode.svg" width="200">
-</picture>
+swagger_preview.jpg<img width="1635" alt="image" src="https://user-images.githubusercontent.com/81571408/233919917-d517e532-0386-477f-9ea4-70be0ec1e04a.png">
+
 
 ## Getting started
 
